@@ -45,27 +45,45 @@ function entrada_caixa1(){
 
   var pcaixa = document.getElementById('primeiracaixa').value
   var scaixa = document.getElementById('segundacaixa').value
-  if (selectdois_txt == 'Quilometro' & selecttres_txt == 'Metro'){
-    $('#segundacaixa').attr('value', `${pcaixa*1000}`)
-  }else if(selectdois_txt == 'Quilometro' & selecttres_txt == 'Centímetro'){
-    $('#segundacaixa').attr('value', `${pcaixa*100000}`)
-  }else if(selectdois_txt == 'Quilometro' & selecttres_txt == 'Milímetro'){
-    $('#segundacaixa').attr('value', `${pcaixa*1e+6}`)
-  }else if(selectdois_txt == 'Quilometro' & selecttres_txt == 'Micrômeto'){
-    $('#segundacaixa').attr('value', `${pcaixa*1e+9}`)
-  }else if(selectdois_txt == 'Quilometro' & selecttres_txt == 'Nanômetro'){
-    $('#segundacaixa').attr('value', `${pcaixa*1e+12}`)
-  }else if(selectdois_txt == 'Quilometro' & selecttres_txt == 'Milha'){
-    $('#segundacaixa').attr('value', `${pcaixa / 1.609}`)
-  }else if(selectdois_txt == 'Quilometro' & selecttres_txt == 'Jarda'){
-    $('#segundacaixa').attr('value', `${pcaixa * 1094}`)
-  }else if(selectdois_txt == 'Quilometro' & selecttres_txt == 'Pé'){
-    $('#segundacaixa').attr('value', `${pcaixa * 3281}`)
-  }else if(selectdois_txt == 'Quilometro' & selecttres_txt == 'Polegada'){
-    $('#segundacaixa').attr('value', `${pcaixa * 39370}`)
-  }else if(selectdois_txt == 'Quilometro' & selecttres_txt == 'Milha náutica'){
-    $('#segundacaixa').attr('value', `${pcaixa / 1.852}`)
+
+  // Conversão: Quilometro para ...
+  var dic_quilo = {
+    'Metro': pcaixa*1000,
+    'Centímetro': pcaixa*100000,
+    'Milímetro': pcaixa*1e+6,
+    'Micrômeto': pcaixa*1e+9,
+    'Nanômetro': pcaixa*1e+12,
+    'Milha': pcaixa / 1.609,
+    'Jarda': pcaixa * 1094,
+    'Pé': pcaixa * 3281, 
+    'Polegada': pcaixa * 39370,
+    'Milha náutica': pcaixa / 1.852
   }
+
+  var dic_metro = {
+    'Quilometro': pcaixa / 1000,
+    'Centímetro': pcaixa * 100,
+    'Milímetro': pcaixa * 1000,
+    'Micrômeto': pcaixa * 1e+6,
+    'Nanômetro': pcaixa * 1e+9,
+    'Milha': pcaixa / 1609,
+    'Jarda': pcaixa * 1.094,
+    'Pé': pcaixa * 3.281, 
+    'Polegada': pcaixa * 39.37,
+    'Milha náutica': pcaixa / 1852
+  }
+
+    if(selectdois_txt == 'Quilometro'){
+      var dic_afazer = dic_quilo
+    }else if (selectdois_txt == 'Metro'){
+      var dic_afazer = dic_metro
+    }
+    for(var pos in dic_afazer){
+      if(pos == selecttres_txt){
+        $('#segundacaixa').attr('value', `${dic_afazer[pos]}`)
+      }
+    }
+  
 }
 
 
