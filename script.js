@@ -152,7 +152,46 @@ function entrada_caixa1(){
     'Milha náutica': pcaixa / 1.151
   }
 
-  var dic_med_gerais = {'Quilometro': dic_quilo, 'Metro': dic_metro, 'Centímetro': dic_cent, 'Milímetro': dic_mili, 'Micrômeto': dic_micro, 'Nanômetro': dic_nano, 'Milha': dic_milha, 'Jarda': dic_jarda}
+  var dic_pe = {
+    'Quilometro': pcaixa / 3281,
+    'Metro': pcaixa / 3.281,
+    'Centímetro': pcaixa * 30.48,
+    'Milímetro': pcaixa * 304.8,
+    'Micrômeto': pcaixa * 304800,
+    'Nanômetro': pcaixa / 3.048e+8,
+    'Jarda': pcaixa / 3,
+    'Milha': pcaixa / 5280, 
+    'Polegada': pcaixa * 12,
+    'Milha náutica': pcaixa / 6076
+  }
+
+  var dic_poleg = {
+    'Quilometro': pcaixa / 39370,
+    'Metro': pcaixa / 39.37,
+    'Centímetro': pcaixa * 2.54,
+    'Milímetro': pcaixa * 25.4,
+    'Micrômeto': pcaixa * 25400,
+    'Nanômetro': pcaixa / 2.54e+7,
+    'Jarda': pcaixa / 36,
+    'Milha': pcaixa / 63360, 
+    'Pé': pcaixa / 12,
+    'Milha náutica': pcaixa / 72910
+  }
+
+  var dic_milhaN = {
+    'Quilometro': pcaixa / 1.852,
+    'Metro': pcaixa / 1852,
+    'Centímetro': pcaixa * 185200,
+    'Milímetro': pcaixa * 1.852e+6,
+    'Micrômeto': pcaixa * 1.852e+9,
+    'Nanômetro': pcaixa / 1.852e+12,
+    'Jarda': pcaixa * 2025,
+    'Milha': pcaixa * 1.151, 
+    'Pé': pcaixa * 6076,
+    'Polegada': pcaixa * 72910
+  }
+
+  var dic_med_gerais = {'Quilometro': dic_quilo, 'Metro': dic_metro, 'Centímetro': dic_cent, 'Milímetro': dic_mili, 'Micrômeto': dic_micro, 'Nanômetro': dic_nano, 'Milha': dic_milha, 'Jarda': dic_jarda, 'Pé': dic_pe, 'Polegada': dic_poleg, 'Milha náutica': dic_milhaN}
 
   // Verifica option selecionado na segunda caixa
   for(var element in dic_med_gerais){
