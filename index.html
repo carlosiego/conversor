@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Medidas</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+</head>
+<body onload="escolhap()">
+    <main onload="escolhaS()">
+        <h1>CONVERSOR</h1>
+        <section>
+            <!-- Select Principal -->
+            <div>
+                <select name="opcaoprincipal" id="selectp" onchange="escolhap()">
+                    <option value="compr">Comprimento</option>
+                    <option value="freq">Frequência</option>
+                    <option value="ener">Energia Mecânica</option>
+                </select>
+            </div>
+            <div id="dentrosection">
+                <div class="encaixes">
+
+                    <input type="number" name="" id="primeiracaixa" oninput="entrada_caixa1()">
+
+                    <!-- Select 2 -->
+                    <select name="" id="select2">
+
+                    </select>
+                </div>
+                =
+                <div class="encaixes">
+
+                    <input type="number" name="" id="segundacaixa">
+                    <!-- Select 3 -->
+                    <select name="" id="select3">
+
+                    </select>
+                </div>
+            </div>
+
+        </section>
+    </main>
+</body>
+</html>
