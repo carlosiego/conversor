@@ -59,7 +59,7 @@ section:hover{
 
 
 select:hover{
-    background-color: black;
+    background-color: rgb(82, 82, 82);
     color: white;
 }
 
@@ -69,8 +69,6 @@ select:hover{
 }
 
 input{
-    color: white;
-    background-color: #202124;
     text-align: center;
 }
 
