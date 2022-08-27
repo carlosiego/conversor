@@ -52,11 +52,11 @@ function entrada_caixa(n){
   var selectp = ''
   var selects = ''
 
-  if(n == 1 || n == 4){
+  if(n == 1){
     caixa_saida = '#segundacaixa'
     caixa_entrada_valor = pcaixa
 
-  }else if(n == 2 || n == 3){
+  }else if(n == 2){
     caixa_saida = '#primeiracaixa'
     caixa_entrada_valor = scaixa
   }
@@ -211,15 +211,17 @@ function entrada_caixa(n){
   var dic_afazer = {}
 
   // Verificando qual caixa de entrada e definindo a caixa de saida
-  if(caixa_entrada_valor.length != 0){
+  if(caixa_entrada_valor.length == 0){
+    $(`${caixa_saida}`).attr('value', '')
+  }else{
     if(selectdois_txt == selecttres_txt){
       $(`${caixa_saida}`).attr('value', `${caixa_entrada_valor}`)
     }
     // Verifica option selecionado na segunda caixa
-    if(n == 1 || n == 4){
+    if(n == 1){
       selectp = selectdois_txt
       selects = selecttres_txt
-    }else if(n == 2 || n == 3){
+    }else if(n == 2){
       selectp = selecttres_txt
       selects = selectdois_txt
     }
@@ -235,9 +237,10 @@ function entrada_caixa(n){
         $(`${caixa_saida}`).attr('value', `${dic_afazer[medida]}`)
       }
     }
-    }else {
-      $(`${caixa_saida}`).attr('value', '')
-    }
+
+
+  }
+
 
 }
  
