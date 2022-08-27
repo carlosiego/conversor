@@ -1,35 +1,50 @@
 @charset "UTF-8";
 
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
+
 *{
     padding: 0px;
     margin: 0px;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
 }
 
 main{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     width: 100wh;
     height: 100vh;
-    background-color: rgb(143, 143, 143);
+    background-image: linear-gradient(45deg, rgb(197, 80, 129), rgb(197, 80, 150));
+
+}
+
+h1{
+    font-family: 'Silkscreen', cursive;
+    font-size: 50px;
 }
 
 section{
+    background-color: white;
     border: 1px solid black;
-    width: 600px;
-    height: 200px;
-    margin-top: 15px;
+    width: 800px;
+    height: 400px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin-bottom: 50px;
 }
 
-div{
-    margin-bottom: 20px;
+section:hover{
+    border: 2px solid black;
+}
+
+
+#igual {
+    margin: 40px 5px 0px 5px;
 }
 
 #dentrosection{
@@ -37,19 +52,30 @@ div{
     gap: 5px;
 }
 
+#selectp{
+    margin-bottom: 20px;
+    width: 550px;
+}
+
+
+select:hover{
+    background-color: black;
+    color: white;
+}
+
 .encaixes{
     display: flex;
     flex-direction: column;
 }
 
-#button{
-    margin-top: 15px;
-    width: 100px;
-    height: 40px;
-
+input{
+    color: white;
+    background-color: #202124;
+    text-align: center;
 }
 
-select#opcaoprincipal{
-    background-color: rgb(146, 146, 146);
-    color: white;
+
+select, input{
+    height: 50px;
+    width: 260px;
 }
