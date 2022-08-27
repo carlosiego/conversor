@@ -14,7 +14,7 @@ main{
     align-items: center;
     width: 100wh;
     height: 100vh;
-    background-color: lightgrey;
+    background-color: rgb(143, 143, 143);
 }
 
 section{
