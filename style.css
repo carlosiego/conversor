@@ -17,17 +17,28 @@ main{
     align-items: center;
     width: 100wh;
     height: 100vh;
-    background-image: linear-gradient(45deg, rgb(197, 80, 129), rgb(197, 80, 150));
+    background-image: linear-gradient(45deg, #0096D2, #037fb1);
 
 }
 
 h1{
+    color: #DF2210;
     font-family: 'Silkscreen', cursive;
     font-size: 50px;
+    animation-name: anime-title;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    text-shadow: 1px 1px 7px 3px rgba(0, 0, 0, 0.397);
+}
+
+@keyframes anime-title {
+    0% {color: #DF2210;}
+    33% {color: #42AA33;}
+    66% {color: #F4C900}
 }
 
 section{
-    background-color: white;
+    background-color: #CEBBC9;
     border: 1px solid black;
     width: 800px;
     height: 400px;
@@ -36,10 +47,7 @@ section{
     align-items: center;
     flex-direction: column;
     margin-bottom: 50px;
-}
-
-section:hover{
-    border: 2px solid black;
+    box-shadow: 1px 1px 7px 3px rgba(0, 0, 0, 0.397);
 }
 
 
@@ -59,8 +67,7 @@ section:hover{
 
 
 select:hover{
-    background-color: rgb(82, 82, 82);
-    color: white;
+
 }
 
 .encaixes{
@@ -77,3 +84,7 @@ select, input{
     height: 50px;
     width: 260px;
 }
+
+
+
+
