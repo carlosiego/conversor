@@ -35,7 +35,7 @@ function escolhap(){
 }
 
 
-function entrada_caixa(n){
+function entrada_caixa(n=0){
   
   var selectdois = document.getElementById('select2')
   var selectdois_txt = selectdois.options[selectdois.selectedIndex].text
@@ -46,19 +46,20 @@ function entrada_caixa(n){
   var pcaixa = document.getElementById('primeiracaixa').value
   var scaixa = document.getElementById('segundacaixa').value
 
-  var caixa_entrada_valor = Number
-  var caixa_saida = ''
 
-  var selectp = ''
-  var selects = ''
+  var caixa_entrada_valor = pcaixa
+  var caixa_saida = '#segundacaixa'
 
-  if(n == 1){
-    caixa_saida = '#segundacaixa'
-    caixa_entrada_valor = pcaixa
+  var selectp = selectdois_txt
+  var selects = selecttres_txt
 
-  }else if(n == 2){
-    caixa_saida = '#primeiracaixa'
-    caixa_entrada_valor = scaixa
+  if(n == 2){
+  caixa_entrada_valor = scaixa
+  caixa_saida = '#primeiracaixa'
+    
+  selectp = selecttres_txt
+  selects = selectdois_txt
+
   }
   // Objetos de calculos de conversão de Comprimento
 
@@ -206,40 +207,35 @@ function entrada_caixa(n){
     'Polegada': caixa_entrada_valor * 72910
   }
 
+
+  // Objeto que contém todos os objetos de conversões em seus valores
   var dic_med_gerais = {'Quilometro': dic_quilo, 'Metro': dic_metro, 'Centímetro': dic_cent, 'Milímetro': dic_mili, 'Micrômeto': dic_micro, 'Nanômetro': dic_nano, 'Milha': dic_milha, 'Jarda': dic_jarda, 'Pé': dic_pe, 'Polegada': dic_poleg, 'Milha náutica': dic_milhaN}
 
   var dic_afazer = {}
 
-  // Verificando qual caixa de entrada e definindo a caixa de saida
+
+ 
   if(caixa_entrada_valor.length == 0){
-    $(`${caixa_saida}`).attr('value', '')
-  }else{
-    if(selectdois_txt == selecttres_txt){
-      $(`${caixa_saida}`).attr('value', `${caixa_entrada_valor}`)
-    }
-    // Verifica option selecionado na segunda caixa
-    if(n == 1){
-      selectp = selectdois_txt
-      selects = selecttres_txt
-    }else if(n == 2){
-      selectp = selecttres_txt
-      selects = selectdois_txt
-    }
+    $(`${caixa_saida}`).attr('value', '') // Sem valor na caixa de entrada, sem valor na de saida também.
+  }
+  
+  else if(selectdois_txt == selecttres_txt){
+    $(`${caixa_saida}`).attr('value', `${caixa_entrada_valor}`) // Se as opções de 
+  }else {
     for(var element in dic_med_gerais){
       if(selectp == element){
         dic_afazer = dic_med_gerais[element]
       }
     }
-  
-    // Verifica option selecionado na terceira caixa
-    for(var medida in dic_afazer){
-      if(medida == selects){
-        $(`${caixa_saida}`).attr('value', `${dic_afazer[medida]}`)
+    
+      // Verifica option segundario selecionado
+      for(var medida in dic_afazer){
+        if(medida == selects){
+          $(`${caixa_saida}`).attr('value', `${dic_afazer[medida]}`)
+        }
       }
     }
 
-
-  }
 
 
 }
