@@ -39,7 +39,6 @@ h1{
 
 section{
     background-color: #CEBBC9;
-    border: 1px solid black;
     width: 800px;
     height: 400px;
     display: flex;
@@ -86,5 +85,20 @@ select, input{
 }
 
 
+nav{
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+}
 
+a{
+    text-decoration: none;
+    color: #000000;
+    font-family: 'Silkscreen', cursive;
+}
+
+a:hover{
+    text-decoration: underline;
+    color: #00000086;
+}
 

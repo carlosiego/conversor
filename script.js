@@ -35,7 +35,7 @@ function escolhap(){
 }
 
 
-function entrada_caixa(n=0){
+function entrada_caixa(n){
   
   var selectdois = document.getElementById('select2')
   var selectdois_txt = selectdois.options[selectdois.selectedIndex].text
@@ -54,13 +54,13 @@ function entrada_caixa(n=0){
   var selects = selecttres_txt
 
   if(n == 2){
-  caixa_entrada_valor = scaixa
-  caixa_saida = '#primeiracaixa'
+    caixa_entrada_valor = scaixa
+    caixa_saida = '#primeiracaixa'
     
-  selectp = selecttres_txt
-  selects = selectdois_txt
-
+    selectp = selecttres_txt
+    selects = selectdois_txt
   }
+
   // Objetos de calculos de conversão de Comprimento
 
   var dic_quilo = {
@@ -213,30 +213,29 @@ function entrada_caixa(n=0){
 
   var dic_afazer = {}
 
-
- 
   if(caixa_entrada_valor.length == 0){
     $(`${caixa_saida}`).attr('value', '') // Sem valor na caixa de entrada, sem valor na de saida também.
   }
   
-  else if(selectdois_txt == selecttres_txt){
-    $(`${caixa_saida}`).attr('value', `${caixa_entrada_valor}`) // Se as opções de 
-  }else {
-    for(var element in dic_med_gerais){
-      if(selectp == element){
-        dic_afazer = dic_med_gerais[element]
-      }
+  if(selectdois_txt == selecttres_txt){
+    $(`${caixa_saida}`).attr('value', `${caixa_entrada_valor}`)
+  }
+
+  if(selectdois_txt == selecttres_txt){
+    $(`#primeiracaixa`).attr('value', `${caixa_entrada_valor}`)
+  }
+
+
+  for(var element in dic_med_gerais){
+    if(selectp == element){
+      dic_afazer = dic_med_gerais[element]
     }
-    
+  }
       // Verifica option segundario selecionado
-      for(var medida in dic_afazer){
-        if(medida == selects){
-          $(`${caixa_saida}`).attr('value', `${dic_afazer[medida]}`)
-        }
-      }
+  for(var medida in dic_afazer){
+    if(medida == selects){
+      $(`${caixa_saida}`).attr('value', `${dic_afazer[medida]}`)
     }
-
-
-
+  }
 }
  
