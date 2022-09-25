@@ -80,7 +80,7 @@ select, input{
 nav{
     display: flex;
     justify-content: space-between;
-    width: 300px;
+    width: 300px
 }
 
 a{
@@ -126,11 +126,10 @@ a:hover{
 
     h1 {
         color: #7d9eca;
-        font-size: 44px;
     }
 
     section{
-        width: 300px;
+        width: 400px;
         height: 400px;
         border-radius: 15px;
     }
@@ -138,12 +137,11 @@ a:hover{
     
     #selectMain{
     margin-bottom: 20px;
-    width: 230px;
+    width: 300px;
     }
 
     select, input{
-        height: 40px;
-        width: 230px;
+        width: 300px;
     }
 
     #dentroSection{
@@ -166,4 +164,28 @@ a:hover{
 
 
 }
+
+
+@media (max-width: 410px){
+
+    h1 {
+        font-size: 42px;
+    }
+    section{
+        width: 290px;
+        height: 400px;
+        border-radius: 15px;
+    }
+
+    #selectMain{
+        margin-bottom: 20px;
+        width: 260px;
+        }
+    
+    select, input{
+        width: 260px;
+    }
+
+}
+
 
