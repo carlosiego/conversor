@@ -15,30 +15,21 @@ main{
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    width: 100wh;
+    width: 100vw;
     height: 100vh;
-    background-image: linear-gradient(45deg, #0096D2, #037fb1);
-
+    background-color: #131921;
 }
 
 h1{
     color: #DF2210;
     font-family: 'Silkscreen', cursive;
     font-size: 50px;
-    animation-name: anime-title;
-    animation-duration: 5s;
-    animation-iteration-count: infinite;
-    text-shadow: 1px 1px 7px 3px rgba(0, 0, 0, 0.397);
+
 }
 
-@keyframes anime-title {
-    0% {color: #DF2210;}
-    33% {color: #42AA33;}
-    66% {color: #F4C900}
-}
 
 section{
-    background-color: #CEBBC9;
+    background-color: #232F3F;
     width: 800px;
     height: 400px;
     display: flex;
@@ -46,7 +37,8 @@ section{
     align-items: center;
     flex-direction: column;
     margin-bottom: 50px;
-    box-shadow: 1px 1px 7px 3px rgba(0, 0, 0, 0.397);
+    box-shadow: 3px 3px 3px 3px #0e111442;
+    border-radius: 15px;
 }
 
 
@@ -59,14 +51,14 @@ section{
     gap: 5px;
 }
 
-#selectp{
+#selectMain{
     margin-bottom: 20px;
     width: 550px;
 }
 
 
 select:hover{
-
+    cursor: pointer;
 }
 
 .encaixes{
@@ -93,12 +85,13 @@ nav{
 
 a{
     text-decoration: none;
-    color: #000000;
+    color: #adadad;
     font-family: 'Silkscreen', cursive;
+    font-size: 19px;
 }
 
 a:hover{
     text-decoration: underline;
-    color: #00000086;
+    color: #568fb686;
 }
 

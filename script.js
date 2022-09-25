@@ -1,69 +1,50 @@
 function escolhap(){
-  var select = document.getElementById('selectp')
-  var valor = select.options[select.selectedIndex].value
-  var selectdois = document.getElementById('select2')
-  selectdois.innerHTML = ''
-  var selecttres = document.getElementById('select3')
-  selecttres.innerHTML = ''
+
+  let selectChild1 = document.getElementById('selectChild1')
+  selectChild1.innerHTML = ''
+  let selectChild2 = document.getElementById('selectChild2')
+  selectChild2.innerHTML = ''
   
   // Listas  
-  var lista_compr = ['Quilometro', 'Metro', 'Centímetro', 'Milímetro', 'Micrômeto', 'Nanômetro', 'Milha', 'Jarda', 'Pé', 'Polegada', 'Milha náutica']
+  const listComprimento = ['Quilometro', 'Metro', 'Centímetro', 'Milímetro', 'Micrômeto', 'Nanômetro', 'Milha', 'Jarda', 'Pé', 'Polegada', 'Milha náutica']
 
-  var lista_freq = ['Hertz', 'Quilo-hertz', 'Mega-hertz', 'Gigahertz']
-
-  var lista_ener = ['Joule', 'Quilojoule', 'Gram calorie', 'Quilocaloria', 'Watt-hora', 'Quilowatt-hora', 'Elétron-volt', 'BTU', 'therm (US)', 'Pé-libra força']
-
-  if(valor == 'compr'){
-    var lis = lista_compr
-  }else if (valor == 'freq'){
-    var lis = lista_freq
-  }else if (valor == 'ener'){
-    var lis = lista_ener
-  }
-  for(let pos in lis){
-    var option = document.createElement('option')
-    option.innerText = `${lis[pos]}`
-    option.value = `${lis[pos]}`
-    selectdois.appendChild(option)
-  }
-  for(let pos in lis){
-    var option = document.createElement('option')
-    option.innerText = `${lis[pos]}`
-    option.value = `${lis[pos]}`
-    selecttres.appendChild(option)
-  } 
+  listComprimento.map(item => {
+    let option = document.createElement('option')
+    option.innerText = item
+    option.value = item
+    selectChild1.appendChild(option)
+    let option_clone = option.cloneNode(true)
+    selectChild2.appendChild(option_clone)
+  })
 }
 
-
-function entrada_caixa(n){
+function entrada_caixa1(n){
   
-  var selectdois = document.getElementById('select2')
-  var selectdois_txt = selectdois.options[selectdois.selectedIndex].text
+  let selectdois = document.getElementById('selectChild1')
+  let selectdois_txt = selectdois.options[selectdois.selectedIndex].text
+  let selecttres = document.getElementById('selectChild2')
+  let selecttres_txt = selecttres.options[selecttres.selectedIndex].text
 
-  var selecttres = document.getElementById('select3')
-  var selecttres_txt = selecttres.options[selecttres.selectedIndex].text
+  let pcaixa = document.getElementById('firstInput')
+  let scaixa = document.getElementById('secondInput')
 
-  var pcaixa = document.getElementById('primeiracaixa').value
-  var scaixa = document.getElementById('segundacaixa').value
+  let caixa_entrada_valor = pcaixa.value
+  let caixa_saida = scaixa
+  
+  let selectp = selectdois_txt
+  let selects = selecttres_txt
 
-
-  var caixa_entrada_valor = pcaixa
-  var caixa_saida = '#segundacaixa'
-
-  var selectp = selectdois_txt
-  var selects = selecttres_txt
-
-  if(n == 2){
-    caixa_entrada_valor = scaixa
-    caixa_saida = '#primeiracaixa'
-    
+  if(n === 2){
+    caixa_entrada_valor = scaixa.value
+    caixa_saida = pcaixa
+  
     selectp = selecttres_txt
     selects = selectdois_txt
   }
 
   // Objetos de calculos de conversão de Comprimento
 
-  var dic_quilo = {
+  const dic_quilo = {
     'Metro': caixa_entrada_valor*1000,
     'Centímetro': caixa_entrada_valor*100000,
     'Milímetro': caixa_entrada_valor*1e+6,
@@ -76,7 +57,7 @@ function entrada_caixa(n){
     'Milha náutica': caixa_entrada_valor / 1.852
   }
 
-  var dic_metro = {
+  const dic_metro = {
     'Quilometro': caixa_entrada_valor / 1000,
     'Centímetro': caixa_entrada_valor * 100,
     'Milímetro': caixa_entrada_valor * 1000,
@@ -89,7 +70,7 @@ function entrada_caixa(n){
     'Milha náutica': caixa_entrada_valor / 1852
   }
 
-  var dic_cent = {
+  const dic_cent = {
     'Quilometro': caixa_entrada_valor / 100000,
     'Metro': caixa_entrada_valor / 100,
     'Milímetro': caixa_entrada_valor * 10,
@@ -103,7 +84,7 @@ function entrada_caixa(n){
 
   }
 
-  var dic_mili = {
+  const dic_mili = {
     'Quilometro': caixa_entrada_valor / 1e+6,
     'Metro': caixa_entrada_valor / 1000,
     'Centímetro': caixa_entrada_valor / 10,
@@ -116,7 +97,7 @@ function entrada_caixa(n){
     'Milha náutica': caixa_entrada_valor / 1.852e+6
   }
 
-  var dic_micro = {
+  const dic_micro = {
     'Quilometro': caixa_entrada_valor / 1e+9,
     'Metro': caixa_entrada_valor / 1e+6,
     'Centímetro': caixa_entrada_valor / 10000,
@@ -129,7 +110,7 @@ function entrada_caixa(n){
     'Milha náutica': caixa_entrada_valor / 1.852e+9
   }
   
-  var dic_nano = {
+  const dic_nano = {
     'Quilometro': caixa_entrada_valor / 1e+12,
     'Metro': caixa_entrada_valor / 1e+9,
     'Centímetro': caixa_entrada_valor / 1e+7,
@@ -142,7 +123,7 @@ function entrada_caixa(n){
     'Milha náutica': caixa_entrada_valor / 1.852e+12
   }
 
-  var dic_milha = {
+  const dic_milha = {
     'Quilometro': caixa_entrada_valor * 1.609,
     'Metro': caixa_entrada_valor * 1609,
     'Centímetro': caixa_entrada_valor * 160900,
@@ -155,7 +136,7 @@ function entrada_caixa(n){
     'Milha náutica': caixa_entrada_valor / 1.151
   }
 
-  var dic_jarda = {
+  const dic_jarda = {
     'Quilometro': caixa_entrada_valor / 1094,
     'Metro': caixa_entrada_valor / 1.094,
     'Centímetro': caixa_entrada_valor * 160900,
@@ -168,7 +149,7 @@ function entrada_caixa(n){
     'Milha náutica': caixa_entrada_valor / 1.151
   }
 
-  var dic_pe = {
+  const dic_pe = {
     'Quilometro': caixa_entrada_valor / 3281,
     'Metro': caixa_entrada_valor / 3.281,
     'Centímetro': caixa_entrada_valor * 30.48,
@@ -181,7 +162,7 @@ function entrada_caixa(n){
     'Milha náutica': caixa_entrada_valor / 6076
   }
 
-  var dic_poleg = {
+  const dic_poleg = {
     'Quilometro': caixa_entrada_valor / 39370,
     'Metro': caixa_entrada_valor / 39.37,
     'Centímetro': caixa_entrada_valor * 2.54,
@@ -194,7 +175,7 @@ function entrada_caixa(n){
     'Milha náutica': caixa_entrada_valor / 72910
   }
 
-  var dic_milhaN = {
+  const dic_milhaN = {
     'Quilometro': caixa_entrada_valor / 1.852,
     'Metro': caixa_entrada_valor / 1852,
     'Centímetro': caixa_entrada_valor * 185200,
@@ -209,33 +190,25 @@ function entrada_caixa(n){
 
 
   // Objeto que contém todos os objetos de conversões em seus valores
-  var dic_med_gerais = {'Quilometro': dic_quilo, 'Metro': dic_metro, 'Centímetro': dic_cent, 'Milímetro': dic_mili, 'Micrômeto': dic_micro, 'Nanômetro': dic_nano, 'Milha': dic_milha, 'Jarda': dic_jarda, 'Pé': dic_pe, 'Polegada': dic_poleg, 'Milha náutica': dic_milhaN}
+  const dic_med_gerais = {'Quilometro': dic_quilo, 'Metro': dic_metro, 'Centímetro': dic_cent, 'Milímetro': dic_mili, 'Micrômeto': dic_micro, 'Nanômetro': dic_nano, 'Milha': dic_milha, 'Jarda': dic_jarda, 'Pé': dic_pe, 'Polegada': dic_poleg, 'Milha náutica': dic_milhaN}
 
   var dic_afazer = {}
-
-  if(caixa_entrada_valor.length == 0){
-    $(`${caixa_saida}`).attr('value', '') // Sem valor na caixa de entrada, sem valor na de saida também.
-  }
   
   if(selectdois_txt == selecttres_txt){
-    $(`${caixa_saida}`).attr('value', `${caixa_entrada_valor}`)
+    caixa_saida.value = caixa_entrada_valor
   }
 
-  if(selectdois_txt == selecttres_txt){
-    $(`#primeiracaixa`).attr('value', `${caixa_entrada_valor}`)
-  }
-
-
-  for(var element in dic_med_gerais){
+  for(let element in dic_med_gerais){
     if(selectp == element){
       dic_afazer = dic_med_gerais[element]
+      console.log(dic_afazer) 
     }
   }
-      // Verifica option segundario selecionado
+
   for(var medida in dic_afazer){
     if(medida == selects){
-      $(`${caixa_saida}`).attr('value', `${dic_afazer[medida]}`)
+      caixa_saida.value = dic_afazer[medida]
     }
   }
 }
- 
+
