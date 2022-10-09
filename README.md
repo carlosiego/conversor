@@ -5,5 +5,7 @@
 
 Este projeto foi criado com o intuito de consolidar meus conhecimentos e mostrar algumas das minhas habilidades, nele foi utilizado:
 
+- O uso do método .map(), foi utilizado para percorrer um array e utilizei o .createElement() em cima de cada item do array para criar os options
+
 
 
