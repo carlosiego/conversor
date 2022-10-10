@@ -7,7 +7,10 @@ Este projeto foi criado com o intuito de consolidar meus conhecimentos e mostrar
 
 <h2>Alguns aprendizados que obtive neste projeto:</h2>
 
-- Utilizei o método .map() para percorrer um array e em cima de cada item utilizei o .createElement() para criar os options, depois disso dei um appendChild no primeiro select, logo depois tentei da um appendChild no segundo select, mas aconteceu esse erro ⬇️
-
-
-
+- Utilizei o método .map() para percorrer um array e em cima de cada item utilizei o .createElement() para criar os options, depois disso dei um .appendChild() no primeiro select, logo depois dei outro .appendChild() no segundo select, mas aconteceu esse erro ⬇️
+<div display=flex>
+<img src="https://user-images.githubusercontent.com/99915608/194962226-1356edf1-5892-4c33-92c1-67f42d0784e8.png" width=450px/>
+<img src="https://user-images.githubusercontent.com/99915608/194962468-96e73d0f-c22a-4fc1-8514-f62680972ec9.png" width=450px height=275px/>
+</div>
+- Apenas o último .appendChild() ficava salvo, diante disso foquei em procurar uma solução e encontrei, com o método .cloneNode() clonei todos os options e assim meu problema se resolvia.
+<img src="https://user-images.githubusercontent.com/99915608/194963373-0d38aff5-5697-486d-bcb0-31ae3e81f9d6.png"/>
