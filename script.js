@@ -1,22 +1,20 @@
-function escolhap(){
+let selectChild1 = document.getElementById('selectChild1')
+selectChild1.innerHTML = ''
+let selectChild2 = document.getElementById('selectChild2')
+selectChild2.innerHTML = ''
 
-  let selectChild1 = document.getElementById('selectChild1')
-  selectChild1.innerHTML = ''
-  let selectChild2 = document.getElementById('selectChild2')
-  selectChild2.innerHTML = ''
-  
-  // Listas  
-  const listComprimento = ['Quilometro', 'Metro', 'Centímetro', 'Milímetro', 'Micrômeto', 'Nanômetro', 'Milha', 'Jarda', 'Pé', 'Polegada', 'Milha náutica']
+// Listas  
+const listComprimento = ['Quilometro', 'Metro', 'Centímetro', 'Milímetro', 'Micrômeto', 'Nanômetro', 'Milha', 'Jarda', 'Pé', 'Polegada', 'Milha náutica']
 
-  listComprimento.map(item => {
-    let option = document.createElement('option')
-    option.innerText = item
-    option.value = item
-    selectChild1.appendChild(option)
-    let option_clone = option.cloneNode(true)
-    selectChild2.appendChild(option_clone)
-  })
-}
+listComprimento.map(item => {
+  let option = document.createElement('option')
+  option.innerText = item
+  option.value = item
+  selectChild1.appendChild(option)
+  let option_clone = option.cloneNode(true)
+  selectChild2.appendChild(option_clone)
+})
+
 
 function entrada_caixa1(n){
   
@@ -205,7 +203,7 @@ function entrada_caixa1(n){
     }
   }
 
-  for(var medida in dic_afazer){
+  for(let medida in dic_afazer){
     if(medida == selects){
       caixa_saida.value = dic_afazer[medida]
     }
