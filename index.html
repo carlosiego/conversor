@@ -12,26 +12,27 @@
         <h1>CONVERSOR</h1>
         <section>
             <!-- Select Principal -->
-            <select name="selectMain" id="selectMain">
-                <option value="compr">Comprimento</option>
+            <select name="selectMain" id="selectMain" onchange="mudancaSelectMain()">
+                <option value="dinheiro">Dinheiro</option>
+                <option value="comprimento">Comprimento</option>
             </select>
 
             <div id="dentroSection">
                 <div class="encaixes">
 
-                    <input type="number" name="" id="firstInput" oninput="entrada_caixa1()">
+                    <input type="number" name="" id="firstInput" oninput="entrada()">
 
                     <!-- Select 2 -->
-                    <select name="" id="selectChild1" onchange="entrada_caixa1()">
+                    <select name="" id="selectChild1" onchange="entrada()">
 
                     </select>
                 </div>
                 <p id="igual">=</p>
                 <div class="encaixes">
 
-                    <input type="number" name="" id="secondInput" oninput="entrada_caixa1(n=2)">
+                    <input type="number" name="" id="secondInput" oninput="entrada(n=2)">
                     <!-- Select 3 -->
-                    <select name="" id="selectChild2" onchange="entrada_caixa1()">
+                    <select name="" id="selectChild2" onchange="entrada()">
 
                     </select>
                 </div>
@@ -45,6 +46,8 @@
             </nav>
         </footer>
     </main>
-    <script src="script.js"></script>
+    <script src="./App/script.js"></script>
+    <script src="./App/converteMoeda.js"></script>
+    <script src="./App/converteComprimento.js"></script>
 </body>
 </html>
