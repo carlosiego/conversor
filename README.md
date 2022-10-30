@@ -15,9 +15,9 @@ Este projeto foi criado com o intuito de consolidar meus conhecimentos e mostrar
 - Apenas o último .appendChild() ficava salvo, diante disso foquei em procurar uma solução e encontrei, com o método .cloneNode() clonei todos os options e assim meu problema foi resolvido.
 <img src="https://user-images.githubusercontent.com/99915608/194963373-0d38aff5-5697-486d-bcb0-31ae3e81f9d6.png"/>
 <h2>Funcionalidades:</h2>
-- Converte qualquer tipo de medida de comprimento
+- Converte qualquer tipo de medida de comprimento<br>
 - Converte Moedas em tempo real (API)
 <h2>Consumindo API:</h2>
-- Usei o método .fetch() passando a url como parâmetro
-- Usando async/await para receber a promisse 
+- Usei o método .fetch() passando a url como parâmetro<br>
+- Usando async/await para receber a promisse <br>
 [Conversor](https://carlosiego.github.io/conversor)
