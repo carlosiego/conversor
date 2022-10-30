@@ -18,5 +18,6 @@ Este projeto foi criado com o intuito de consolidar meus conhecimentos e mostrar
 - Converte qualquer tipo de medida de comprimento
 - Converte Moedas em tempo real (API)
 <h2>Consumindo API:</h2>
-
+- Usei o método .fetch() passando a url como parâmetro
+- Usando async/await para receber a promisse 
 [Conversor](https://carlosiego.github.io/conversor)
